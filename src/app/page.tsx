@@ -146,7 +146,7 @@ const App = () => {
                 <Box display="flex" gap={2} ml={2}>
                   {["Minimal", "Holiday", "Abstract", "Quantum"].map((theme, idx) => (
                  <Themecard
-                 key={idx}
+                 key={theme.toLowerCase()}
                  text={theme}
                  isSelected={selectedTheme === `theme-${theme.toLowerCase()}`}
                  onThemeChange={() => setSelectedTheme(`theme-${theme.toLowerCase()}`)}
@@ -163,7 +163,7 @@ const App = () => {
       {eventsData.length > 0 && <Grid2 size={4}>
       <Typography sx={{ fontSize: 24 }}>Events</Typography>
         {eventsData.map((event, index) => (
-          <ListingPage key={index} eventData={event} />
+          <ListingPage key={event.eventName + index} eventData={event} />
         ))}
       </Grid2>}
     </Grid2>

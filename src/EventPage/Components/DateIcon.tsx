@@ -1,7 +1,7 @@
 import { Box, Card, Typography } from "@mui/material";
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 
-const DateIcon = ({ startDate }: { startDate: any }) => {
+const DateIcon = ({ startDate }: { startDate: Dayjs }) => {
     const day = dayjs(startDate).format("ddd"); 
     const date = dayjs(startDate).format("DD"); 
 
