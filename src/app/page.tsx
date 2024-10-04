@@ -29,19 +29,14 @@ export interface EventData {
 }
 
 const TopBar = () => (
-<CardContent sx={{ gap: 4, display: 'flex' }}>
-  {[
-    { text: "Events", icon: <ConfirmationNumberOutlined sx={{ color: 'gray' }} /> },
-    { text: "Calendar", icon: <CalendarMonth sx={{ color: 'gray' }} /> },
-    { text: "Explore", icon: <Explore sx={{ color: 'gray' }} /> },
-  ].map((item, idx) => (
-    <Box key={idx} display={'flex'} gap={1}>
-      {item.icon}
-      <Typography color="grey">{item.text}</Typography>
-    </Box>
-  ))}
-</CardContent>
-
+  <CardContent sx={{ gap: 4, display: 'flex' }}>
+    {["Events", "Calendar", "Explore"].map((text, idx) => (
+      <Box key={idx} display={'flex'} gap={1}>
+        {[<ConfirmationNumberOutlined sx={{color:'gray'}}/>, <CalendarMonth sx={{color:'gray'}}/>, <Explore sx={{color:'gray'}}/>][idx]}
+        <Typography color="grey">{text}</Typography>
+      </Box>
+    ))}
+  </CardContent>
 );
 
 const App = () => {
